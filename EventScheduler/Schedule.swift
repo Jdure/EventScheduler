@@ -37,6 +37,13 @@ class Schedule {
         
     }
 
+    func addNewEvent(title:String, description:String, date:Date){
+        
+        let newEvent = Event(title: title, description: description, date: date)
+        self.eventArray.append(newEvent)
+        
+    }
+
     func addNewEvent(newEvent:Event){
 
         self.eventArray.append(newEvent)
