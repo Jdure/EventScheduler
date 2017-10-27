@@ -33,10 +33,19 @@ class Event {
         self.setDate(formatedDateString: dateString)
     }
     
+    convenience init(title:String, description:String, date:Date) {
+        self.init(title: title, description: description)
+        self.setDate(date:date)
+    }
+
     //Set Date from String to Date format
     func setDate(formatedDateString: String){
         formatting.dateFormat = self.stringDateFormat
         self.date = formatting.date(from: formatedDateString)
+    }
+
+    func setDate(date: Date){
+        self.date = date
     }
     
     //return information from event. Set default value for date
@@ -50,6 +59,16 @@ class Event {
         
         return "Event: \(self.title ?? "")\nDate: \(formatting.string(from: self.date!))\nDescription: \(self.description ?? "")\n"
         
+    }
+    
+    func getDate() -> String{
+        formatting.dateFormat = self.stringDateFormat
+        
+        if self.date == nil {
+            self.setDate(formatedDateString: "1900/01/01 00:00")
+        }
+        
+        return formatting.string(from: self.date!)
     }
     
 }

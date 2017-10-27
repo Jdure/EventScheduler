@@ -36,7 +36,12 @@ class Schedule {
         self.eventArray.append(newEvent)
         
     }
-    
+
+    func addNewEvent(newEvent:Event){
+
+        self.eventArray.append(newEvent)
+    }
+
     //Method to output the entire list of events user has scheduled
     func outputAllEvents() -> String{
         guard !self.eventArray.isEmpty else {
@@ -53,6 +58,11 @@ class Schedule {
         
         return returnText
         
+    }
+    
+    //Method to return eventArray
+    func getSchedule() -> Array<Event> {
+        return self.eventArray
     }
     
     
