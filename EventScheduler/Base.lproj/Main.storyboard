@@ -21,10 +21,11 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" id="xGc-SS-2kO">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xGc-SS-2kO" id="h1v-5S-wx3">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" semanticContentAttribute="forceLeftToRight" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xGc-SS-2kO" id="h1v-5S-wx3">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="showEventInfo" id="eiJ-qg-Jwi"/>
                                 </connections>
@@ -35,11 +36,13 @@
                             <outlet property="delegate" destination="ExT-1F-YGe" id="pSt-DY-3x2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Event List" id="phJ-5b-02z"/>
+                    <navigationItem key="navigationItem" title="Event List" id="phJ-5b-02z">
+                        <barButtonItem key="rightBarButtonItem" title="New" style="plain" id="18E-UC-NSQ" userLabel="New"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODb-zt-7zH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455" y="279"/>
+            <point key="canvasLocation" x="453.60000000000002" y="278.41079460269867"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JxN-yw-VZP">
@@ -60,48 +63,52 @@
         <!--EventInfoViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="EventInfoViewController" id="BYZ-38-t0r" userLabel="EventInfoViewController" customClass="EventInfoViewController" customModule="EventScheduler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Event Detail" id="BYZ-38-t0r" userLabel="EventInfoViewController" customClass="EventInfoViewController" customModule="EventScheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="333" affinity="minY"/>
+                            <userLayoutGuide location="187" affinity="minX"/>
+                        </userGuides>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="eventInfoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="dLm-mq-3As">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="eventTitle" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRT-GQ-Noi">
-                                <rect key="frame" x="166" y="94" width="42" height="21.000000000000014"/>
+                                <rect key="frame" x="108" y="110" width="251" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="eventDate" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csh-fn-C4F">
-                                <rect key="frame" x="166" y="174.99999999999989" width="42" height="21.000000000000028"/>
+                                <rect key="frame" x="108" y="196" width="251" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="eventTitleImage" translatesAutoresizingMaskIntoConstraints="NO" id="IO8-g5-60j">
-                                <rect key="frame" x="34" y="78" width="66" height="52"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="eventTitleImage" image="star.png" translatesAutoresizingMaskIntoConstraints="NO" id="IO8-g5-60j">
+                                <rect key="frame" x="16" y="94" width="66" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="eventDescriptionImage" translatesAutoresizingMaskIntoConstraints="NO" id="eEe-s2-1p6">
-                                <rect key="frame" x="34" y="253" width="66" height="52"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="eventDateImage" image="calendar.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wyx-Pl-PpS">
+                                <rect key="frame" x="16" y="180" width="66" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="eventDescription" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQi-tN-SpK">
-                                <rect key="frame" x="165" y="269" width="178" height="100"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="eventDescriptionImage" image="info.png" translatesAutoresizingMaskIntoConstraints="NO" id="eEe-s2-1p6">
+                                <rect key="frame" x="16" y="269" width="66" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="eventDescription" text="Description" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQi-tN-SpK">
+                                <rect key="frame" x="108" y="284" width="251" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="eventDateImage" translatesAutoresizingMaskIntoConstraints="NO" id="Wyx-Pl-PpS">
-                                <rect key="frame" x="34" y="159" width="66" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -117,4 +124,9 @@
             <point key="canvasLocation" x="1168.8" y="277.51124437781112"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar.png" width="720" height="720"/>
+        <image name="info.png" width="720" height="720"/>
+        <image name="star.png" width="720" height="720"/>
+    </resources>
 </document>

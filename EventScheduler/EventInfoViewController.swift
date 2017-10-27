@@ -23,7 +23,7 @@ class EventInfoViewController: UIViewController {
 
         if let e = event {
             eventTitle.text = e.title
-            eventDate.text = e.stringDateFormat
+            eventDate.text = e.getDate()
             eventDescription.text = e.description
         }
     }

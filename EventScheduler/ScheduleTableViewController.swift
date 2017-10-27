@@ -20,6 +20,7 @@ class ScheduleTableViewController: UITableViewController {
         schedule.addNewEvent(title: "Test 2", description: "This is another Test Event", dateString: "2017-09-30 02:12")
         schedule.addNewEvent(title: "Test 3", description: "Oh yeah, a new one", dateString: "2017-10-05 05:15")
     }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return schedule.eventCount
     }
@@ -30,13 +31,23 @@ class ScheduleTableViewController: UITableViewController {
         
         if let e = schedule.getSchedule()[indexPath.row].title {
             cell.textLabel?.text = e
+            cell.imageView?.image = UIImage(named: "clock.png")
+            cell.imageView?.contentMode = UIViewContentMode.scaleAspectFill
         }
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 44
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                 if segue.identifier == "showEventInfo" {
