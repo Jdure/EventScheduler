@@ -55,14 +55,13 @@ class NewEventViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
         
+        //hide keyboard when Save Button is tapped
         self.eventTitle.resignFirstResponder()
         self.eventDescription.resignFirstResponder();
         
     }
     
-    /**
-     * Called when the user click on the view (outside the UITextField).
-     */
+    //Called when the user click on the view (outside the UITextField).
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

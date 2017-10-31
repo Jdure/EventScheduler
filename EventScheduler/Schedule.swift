@@ -29,7 +29,7 @@ class Schedule {
         return eventArray.count
     }
 
-    //Method to add new events according to the schedule
+    //Method to add new events using String Date Parameter
     func addNewEvent(title:String, description:String, dateString:String){
         
         let newEvent = Event(title: title, description: description, dateString: dateString)
@@ -37,6 +37,7 @@ class Schedule {
         
     }
 
+    //Method to add new events using Date Parameter
     func addNewEvent(title:String, description:String, date:Date){
         
         let newEvent = Event(title: title, description: description, date: date)
@@ -44,11 +45,13 @@ class Schedule {
         
     }
 
+    //Method to add new events using Event Object
     func addNewEvent(newEvent:Event){
 
         self.eventArray.append(newEvent)
     }
 
+    //Method to remove events from the Array
     func removeEvent(index:Int){
         
         self.eventArray.remove(at: index)

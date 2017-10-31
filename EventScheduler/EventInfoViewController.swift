@@ -13,19 +13,20 @@ class EventInfoViewController: UIViewController {
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventDescription: UILabel!
-    
+    @IBOutlet weak var eventLongDesc: UITextView!
+
     var event: Event?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        // Do any additional setup after loading the view.
 
+        //If there is at least one event created, display it to the list
         if let e = event {
             eventTitle.text = e.title
             eventDate.text = e.getDate()
-            eventDescription.text = e.description
+            eventLongDesc.text = e.description
         }
+        
     }
     
 

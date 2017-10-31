@@ -21,6 +21,7 @@
 		2742CAC61F9FE93000E6DE6C /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2742CAC41F9FE93000E6DE6C /* Schedule.swift */; };
 		279520E31FA2A04A00BCB31B /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279520E21FA2A04A00BCB31B /* Protocol.swift */; };
 		279520E51FA2A6A300BCB31B /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279520E41FA2A6A300BCB31B /* ScheduleTableViewController.swift */; };
+		27A378BA1FA9137F00712AD1 /* bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 27A378B91FA9137F00712AD1 /* bg1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		2742CAC41F9FE93000E6DE6C /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		279520E21FA2A04A00BCB31B /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		279520E41FA2A6A300BCB31B /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		27A378B91FA9137F00712AD1 /* bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg1.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				2742CAB11F9FD5F600E6DE6C /* AppDelegate.swift */,
 				2742CAB51F9FD5F600E6DE6C /* Main.storyboard */,
 				2742CAB81F9FD5F600E6DE6C /* Assets.xcassets */,
+				27A378B91FA9137F00712AD1 /* bg1.jpg */,
 				273D003E1FA2C2870047C04A /* clock.png */,
 				273D003B1FA2C09A0047C04A /* info.png */,
 				273D003A1FA2C09A0047C04A /* star.png */,
@@ -150,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27A378BA1FA9137F00712AD1 /* bg1.jpg in Resources */,
 				2742CABC1F9FD5F600E6DE6C /* LaunchScreen.storyboard in Resources */,
 				273D003C1FA2C09A0047C04A /* star.png in Resources */,
 				273D00391FA2BEF30047C04A /* calendar.png in Resources */,

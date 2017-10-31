@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Passing Event Back to the Caller
 protocol EventPassingDelegate {
     func passEventBack(event: Event)
 }
