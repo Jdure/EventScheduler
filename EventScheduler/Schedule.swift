@@ -49,6 +49,11 @@ class Schedule {
         self.eventArray.append(newEvent)
     }
 
+    func removeEvent(index:Int){
+        
+        self.eventArray.remove(at: index)
+    }
+
     //Method to output the entire list of events user has scheduled
     func outputAllEvents() -> String{
         guard !self.eventArray.isEmpty else {
