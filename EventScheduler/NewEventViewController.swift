@@ -14,12 +14,11 @@ class NewEventViewController: UIViewController {
     @IBOutlet weak var eventDescription: UITextView!
     @IBOutlet weak var eventDate: UIDatePicker!
     
-    //Schedule object instance
-    let schedule = Schedule();
-
+    var delegate: EventPassingDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.eventDescription.layer.borderColor = UIColor(red:0.76, green:0.76, blue:0.76, alpha:0.4).cgColor
         self.eventDescription.layer.borderWidth = 1.0;
@@ -34,15 +33,18 @@ class NewEventViewController: UIViewController {
     //Clear all fields on the screen and set focus on the first one
     func clearFields() {
         eventTitle.text = ""
-        eventTitle.becomeFirstResponder()
+        eventDescription.text = ""
     }
     
-
     // MARK: - Navigation
     @IBAction func btnSave(_ sender: Any) {
         //test if all required fields are filled
         if (!self.eventTitle.text!.isEmpty) && (!self.description.isEmpty)  {
-            schedule.addNewEvent(title:self.title!, description:self.description, date:self.eventDate.date)
+            //            schedule.addNewEvent(title:self.title!, description:self.description, date:self.eventDate.date)
+            let newEvent = Event(title:self.eventTitle.text!, description:self.eventDescription.text!, date:self.eventDate.date)
+            delegate?.passEventBack(event: newEvent)
+            _ = navigationController?.popViewController(animated: true)
+            self.clearFields()
         } else {
             //Pop up message when one of the fields is not filled
             let alertController = UIAlertController(title: "Event Creation Error",
@@ -53,9 +55,16 @@ class NewEventViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
         
-        self.clearFields()
+        self.eventTitle.resignFirstResponder()
+        self.eventDescription.resignFirstResponder();
         
     }
     
+    /**
+     * Called when the user click on the view (outside the UITextField).
+     */
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
 }

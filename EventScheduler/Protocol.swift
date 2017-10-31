@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol EventPassingDelegate {
+    func passEventBack(event: Event)
+}

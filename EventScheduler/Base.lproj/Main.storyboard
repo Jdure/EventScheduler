@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,10 +39,14 @@
                     <navigationItem key="navigationItem" title="Event List" id="phJ-5b-02z">
                         <barButtonItem key="rightBarButtonItem" title="New Event" style="plain" id="18E-UC-NSQ" userLabel="New Event">
                             <connections>
-                                <segue destination="2j7-xX-nay" kind="show" id="6CR-QZ-dyM"/>
+                                <action selector="addNewEvent:" destination="ExT-1F-YGe" id="6P9-NI-wJV"/>
+                                <segue destination="2j7-xX-nay" kind="show" identifier="addNewEvent" id="6CR-QZ-dyM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="sL3-LY-4Cp">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODb-zt-7zH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,7 +95,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="qu8-FA-eVU">
-                                        <rect key="frame" x="0.0" y="294" width="320" height="216"/>
+                                        <rect key="frame" x="0.0" y="294.5" width="320" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="530764613.546103">
                                             <!--2017-10-27 02:36:53 +0000-->
                                         </date>
